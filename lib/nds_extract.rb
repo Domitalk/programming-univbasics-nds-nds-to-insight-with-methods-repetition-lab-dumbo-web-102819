@@ -36,6 +36,16 @@ def list_of_directors(source)
 end
 
 def total_gross(source)
+  running_total = 0
+  names_of_directors_array = list_of_directors(source)
+  index_of_directors = 0
+  directors_totals_hash = directors_totals(source)
+  while index_of_directors < names_of_directors_array.size do
+    director_name_key = names_of_directors_array[index_of_directors]
+    running_total += directors_totals_hash[director_name_key]
+    index_of_directors += 1
+  end
+  running_total
   # Write this implementation
   #
   # Should use methods:
